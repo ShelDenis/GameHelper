@@ -35,5 +35,12 @@ fun InitialScreen(navController: NavController){
         ) {
             Text(text = "Правда или правда")
         }
+
+        Button(
+            onClick = { navController.navigate("start_munchkin_screen") },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Манчкин")
+        }
     }
 }

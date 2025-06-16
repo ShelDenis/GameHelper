@@ -6,6 +6,7 @@ class MunchkinGamer {
     var wearLevel: Int
     var summaryLevel: Int
     var mClass: String
+    var underCurse: Boolean
 
 
     constructor(name: String, gameLevel: Int, wearLevel: Int, mClass: String = "No class") {
@@ -14,6 +15,7 @@ class MunchkinGamer {
         this.wearLevel = wearLevel
         this.summaryLevel = gameLevel + wearLevel
         this.mClass = mClass
+        this.underCurse = false
     }
 
     fun changeGameLevel(n: Int) {
