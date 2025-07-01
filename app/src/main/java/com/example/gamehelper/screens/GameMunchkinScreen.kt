@@ -125,9 +125,9 @@ fun GameMunchkinScreen(navController: NavController, md: MunchkinData){
                         modifier = Modifier.width(50.dp)
                     ) {
                         if (lps[i].underCurse)
-                            Text(text = "\uD83E\uDD29")
-                        else
                             Text(text = "\uD83D\uDC80")
+                        else
+                            Text(text = "\uD83E\uDD29")
                     }
                 }
 //                Если понадобится в дальнейшем
