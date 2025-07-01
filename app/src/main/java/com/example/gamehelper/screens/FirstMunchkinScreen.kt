@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
 @Composable
-fun FirstMunchkinScreen(navController: NavController){
+fun FirstMunchkinScreen(navController: NavController, md: MunchkinData){
     var pl_mes = remember { mutableStateOf("") }
     var players = remember { mutableStateOf("") }
 
@@ -66,7 +66,9 @@ fun FirstMunchkinScreen(navController: NavController){
 
         Column {
             Button(
-                onClick = { navController.navigate("game_munchkin_screen")
+                onClick = {
+                    md.playersStr = players.toString()
+                    navController.navigate("game_munchkin_screen")
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {

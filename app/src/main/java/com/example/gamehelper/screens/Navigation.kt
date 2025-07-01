@@ -13,7 +13,7 @@ fun Navigation(nd: NecessaryData, md: MunchkinData) {
         composable("true_or_true_screen") { TrueOrTrue(navController, nd) }
         composable("true_settings_screen") {TrueSettings(navController, nd)}
         composable("true_congrat_screen") {CongratulationScreen(navController, nd)}
-        composable("start_munchkin_screen") {FirstMunchkinScreen((navController))}
+        composable("start_munchkin_screen") {FirstMunchkinScreen(navController, md)}
         composable("game_munchkin_screen") {GameMunchkinScreen(navController, md)}
     }
 }
