@@ -9,9 +9,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var nd = NecessaryData()
+        var md = MunchkinData()
         setContent {
             GameHelperTheme() {
-                Navigation(nd)
+                Navigation(nd, md)
             }
         }
 
