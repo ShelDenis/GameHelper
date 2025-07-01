@@ -47,7 +47,22 @@ fun GameMunchkinScreen(navController: NavController, md: MunchkinData){
                 md.parsePlayers()
             }
 
+
             var lps = md.players.values.toList()
+
+            for (i: Int in 0..lps.count() - 1) {
+                if (lps[i].gameLevel >= 10) {
+                    var lb = ""
+                    var cnt = 1
+                    for (p: MunchkinGamer in lps.sortedByDescending { it.summaryLevel }){
+                        lb += cnt.toString() + ") " + p.name + "\n"
+                        cnt ++
+                    }
+                    md.leaderboard = lb
+                    navController.navigate("finish_munchkin_screen")
+                }
+            }
+
             for (i: Int in 0..lps.count() - 1) {
                 Text(lps[i].name, style = MaterialTheme.typography.titleLarge)
                 Text(
@@ -140,6 +155,13 @@ fun GameMunchkinScreen(navController: NavController, md: MunchkinData){
 
                 Button(
                     onClick = {
+                        var lb = ""
+                        var cnt = 1
+                        for (p: MunchkinGamer in lps.sortedByDescending { it.summaryLevel }){
+                            lb += cnt.toString() + ") " + p.name + "\n"
+                            cnt ++
+                        }
+                        md.leaderboard = lb
                         navController.navigate("finish_munchkin_screen")
                     },
                     modifier = Modifier.fillMaxWidth()

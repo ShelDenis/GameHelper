@@ -15,5 +15,6 @@ fun Navigation(nd: NecessaryData, md: MunchkinData) {
         composable("true_congrat_screen") {CongratulationScreen(navController, nd)}
         composable("start_munchkin_screen") {FirstMunchkinScreen(navController, md)}
         composable("game_munchkin_screen") {GameMunchkinScreen(navController, md)}
+        composable("finish_munchkin_screen") {FinishMunchkinScreen(navController, md)}
     }
 }

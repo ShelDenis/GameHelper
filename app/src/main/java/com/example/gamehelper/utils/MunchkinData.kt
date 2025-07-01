@@ -12,6 +12,8 @@ class MunchkinData {
 
     var type: String by mutableStateOf("Classic")
 
+    var leaderboard = ""
+
     val classicClasses = listOf("No", "Клирик", "Волшебник", "Вор", "Воин")
     val classicRaces = listOf("No", "Дварф", "Эльф", "Хафлинг")
     val russianClasses = listOf("No", "Олигарх", "Спортсмен", "Хакер", "Казак")
