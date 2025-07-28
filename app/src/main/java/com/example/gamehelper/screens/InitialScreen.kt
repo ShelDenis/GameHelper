@@ -42,5 +42,12 @@ fun InitialScreen(navController: NavController){
         ) {
             Text(text = "Манчкин")
         }
+
+        Button(
+            onClick = { navController.navigate("tarot_screen") },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Таро")
+        }
     }
 }
