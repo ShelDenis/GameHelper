@@ -80,6 +80,8 @@ fun TarotScreen(navController: NavController){
                 steps = 11
             )
 
+            val turnList = remember { mutableListOf<Boolean>() }
+
             Button(
                 onClick = {
                     val uniqueCardNums = mutableSetOf<Int>()
@@ -87,13 +89,17 @@ fun TarotScreen(navController: NavController){
                         uniqueCardNums.add(Random.nextInt(0, n))
                     }
                     cardNums.value = uniqueCardNums.toList()
+                    
+                    val updatedTurnList = List(nCards.value) { Random.nextBoolean() }
+                    turnList.clear()
+                    turnList.addAll(updatedTurnList)
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(text = "Получить расклад")
             }
 
-            val turnList = List(nCards.value) { Random.nextBoolean() }
+
 
             LazyRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
